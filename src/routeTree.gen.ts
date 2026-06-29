@@ -9,9 +9,39 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as WealthRouteImport } from './routes/wealth'
+import { Route as ProfileRouteImport } from './routes/profile'
+import { Route as InvestmentsRouteImport } from './routes/investments'
+import { Route as FixedDepositsRouteImport } from './routes/fixed-deposits'
+import { Route as AccountsRouteImport } from './routes/accounts'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ApiChatRouteImport } from './routes/api/chat'
 
+const WealthRoute = WealthRouteImport.update({
+  id: '/wealth',
+  path: '/wealth',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProfileRoute = ProfileRouteImport.update({
+  id: '/profile',
+  path: '/profile',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InvestmentsRoute = InvestmentsRouteImport.update({
+  id: '/investments',
+  path: '/investments',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FixedDepositsRoute = FixedDepositsRouteImport.update({
+  id: '/fixed-deposits',
+  path: '/fixed-deposits',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AccountsRoute = AccountsRouteImport.update({
+  id: '/accounts',
+  path: '/accounts',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -25,32 +55,109 @@ const ApiChatRoute = ApiChatRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/accounts': typeof AccountsRoute
+  '/fixed-deposits': typeof FixedDepositsRoute
+  '/investments': typeof InvestmentsRoute
+  '/profile': typeof ProfileRoute
+  '/wealth': typeof WealthRoute
   '/api/chat': typeof ApiChatRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/accounts': typeof AccountsRoute
+  '/fixed-deposits': typeof FixedDepositsRoute
+  '/investments': typeof InvestmentsRoute
+  '/profile': typeof ProfileRoute
+  '/wealth': typeof WealthRoute
   '/api/chat': typeof ApiChatRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/accounts': typeof AccountsRoute
+  '/fixed-deposits': typeof FixedDepositsRoute
+  '/investments': typeof InvestmentsRoute
+  '/profile': typeof ProfileRoute
+  '/wealth': typeof WealthRoute
   '/api/chat': typeof ApiChatRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/api/chat'
+  fullPaths:
+    | '/'
+    | '/accounts'
+    | '/fixed-deposits'
+    | '/investments'
+    | '/profile'
+    | '/wealth'
+    | '/api/chat'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/api/chat'
-  id: '__root__' | '/' | '/api/chat'
+  to:
+    | '/'
+    | '/accounts'
+    | '/fixed-deposits'
+    | '/investments'
+    | '/profile'
+    | '/wealth'
+    | '/api/chat'
+  id:
+    | '__root__'
+    | '/'
+    | '/accounts'
+    | '/fixed-deposits'
+    | '/investments'
+    | '/profile'
+    | '/wealth'
+    | '/api/chat'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AccountsRoute: typeof AccountsRoute
+  FixedDepositsRoute: typeof FixedDepositsRoute
+  InvestmentsRoute: typeof InvestmentsRoute
+  ProfileRoute: typeof ProfileRoute
+  WealthRoute: typeof WealthRoute
   ApiChatRoute: typeof ApiChatRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/wealth': {
+      id: '/wealth'
+      path: '/wealth'
+      fullPath: '/wealth'
+      preLoaderRoute: typeof WealthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/profile': {
+      id: '/profile'
+      path: '/profile'
+      fullPath: '/profile'
+      preLoaderRoute: typeof ProfileRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/investments': {
+      id: '/investments'
+      path: '/investments'
+      fullPath: '/investments'
+      preLoaderRoute: typeof InvestmentsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/fixed-deposits': {
+      id: '/fixed-deposits'
+      path: '/fixed-deposits'
+      fullPath: '/fixed-deposits'
+      preLoaderRoute: typeof FixedDepositsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/accounts': {
+      id: '/accounts'
+      path: '/accounts'
+      fullPath: '/accounts'
+      preLoaderRoute: typeof AccountsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -70,6 +177,11 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AccountsRoute: AccountsRoute,
+  FixedDepositsRoute: FixedDepositsRoute,
+  InvestmentsRoute: InvestmentsRoute,
+  ProfileRoute: ProfileRoute,
+  WealthRoute: WealthRoute,
   ApiChatRoute: ApiChatRoute,
 }
 export const routeTree = rootRouteImport

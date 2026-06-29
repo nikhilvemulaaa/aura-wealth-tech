@@ -64,16 +64,8 @@ function Wealth() {
 
         <SectionCard title="Portfolio heatmap" description="Holdings sized by value">
           <ResponsiveContainer width="100%" height={280}>
-            <Treemap data={inv.map(i => ({ name: i.name, size: i.current }))} dataKey="size" stroke="var(--background)"
-              fill="oklch(0.55 0.2 255)" content={({ x, y, width, height, name, size }: any) => (
-                <g>
-                  <rect x={x} y={y} width={width} height={height}
-                    fill={`oklch(${0.45 + (size / 350000) * 0.3} 0.18 ${245 + (size / 100000)})`} stroke="var(--background)" />
-                  {width > 80 && height > 30 && (
-                    <text x={x + 8} y={y + 18} fill="white" fontSize={11} fontWeight={600}>{(name || "").slice(0, 22)}</text>
-                  )}
-                </g>
-              )} />
+            <Treemap data={inv.map(i => ({ name: i.name, size: i.current }))} dataKey="size" stroke="var(--background)" fill="oklch(0.55 0.2 255)" />
+
           </ResponsiveContainer>
         </SectionCard>
       </div>
