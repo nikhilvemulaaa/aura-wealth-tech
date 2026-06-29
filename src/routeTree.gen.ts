@@ -10,9 +10,16 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as WealthRouteImport } from './routes/wealth'
+import { Route as StocksRouteImport } from './routes/stocks'
 import { Route as ProfileRouteImport } from './routes/profile'
+import { Route as PlannerRouteImport } from './routes/planner'
+import { Route as MutualFundsRouteImport } from './routes/mutual-funds'
+import { Route as LoansRouteImport } from './routes/loans'
 import { Route as InvestmentsRouteImport } from './routes/investments'
+import { Route as InsuranceRouteImport } from './routes/insurance'
+import { Route as GoalsRouteImport } from './routes/goals'
 import { Route as FixedDepositsRouteImport } from './routes/fixed-deposits'
+import { Route as AnalyticsRouteImport } from './routes/analytics'
 import { Route as AccountsRouteImport } from './routes/accounts'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ApiChatRouteImport } from './routes/api/chat'
@@ -22,9 +29,29 @@ const WealthRoute = WealthRouteImport.update({
   path: '/wealth',
   getParentRoute: () => rootRouteImport,
 } as any)
+const StocksRoute = StocksRouteImport.update({
+  id: '/stocks',
+  path: '/stocks',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ProfileRoute = ProfileRouteImport.update({
   id: '/profile',
   path: '/profile',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PlannerRoute = PlannerRouteImport.update({
+  id: '/planner',
+  path: '/planner',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MutualFundsRoute = MutualFundsRouteImport.update({
+  id: '/mutual-funds',
+  path: '/mutual-funds',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoansRoute = LoansRouteImport.update({
+  id: '/loans',
+  path: '/loans',
   getParentRoute: () => rootRouteImport,
 } as any)
 const InvestmentsRoute = InvestmentsRouteImport.update({
@@ -32,9 +59,24 @@ const InvestmentsRoute = InvestmentsRouteImport.update({
   path: '/investments',
   getParentRoute: () => rootRouteImport,
 } as any)
+const InsuranceRoute = InsuranceRouteImport.update({
+  id: '/insurance',
+  path: '/insurance',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GoalsRoute = GoalsRouteImport.update({
+  id: '/goals',
+  path: '/goals',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const FixedDepositsRoute = FixedDepositsRouteImport.update({
   id: '/fixed-deposits',
   path: '/fixed-deposits',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AnalyticsRoute = AnalyticsRouteImport.update({
+  id: '/analytics',
+  path: '/analytics',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AccountsRoute = AccountsRouteImport.update({
@@ -56,18 +98,32 @@ const ApiChatRoute = ApiChatRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/accounts': typeof AccountsRoute
+  '/analytics': typeof AnalyticsRoute
   '/fixed-deposits': typeof FixedDepositsRoute
+  '/goals': typeof GoalsRoute
+  '/insurance': typeof InsuranceRoute
   '/investments': typeof InvestmentsRoute
+  '/loans': typeof LoansRoute
+  '/mutual-funds': typeof MutualFundsRoute
+  '/planner': typeof PlannerRoute
   '/profile': typeof ProfileRoute
+  '/stocks': typeof StocksRoute
   '/wealth': typeof WealthRoute
   '/api/chat': typeof ApiChatRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/accounts': typeof AccountsRoute
+  '/analytics': typeof AnalyticsRoute
   '/fixed-deposits': typeof FixedDepositsRoute
+  '/goals': typeof GoalsRoute
+  '/insurance': typeof InsuranceRoute
   '/investments': typeof InvestmentsRoute
+  '/loans': typeof LoansRoute
+  '/mutual-funds': typeof MutualFundsRoute
+  '/planner': typeof PlannerRoute
   '/profile': typeof ProfileRoute
+  '/stocks': typeof StocksRoute
   '/wealth': typeof WealthRoute
   '/api/chat': typeof ApiChatRoute
 }
@@ -75,9 +131,16 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/accounts': typeof AccountsRoute
+  '/analytics': typeof AnalyticsRoute
   '/fixed-deposits': typeof FixedDepositsRoute
+  '/goals': typeof GoalsRoute
+  '/insurance': typeof InsuranceRoute
   '/investments': typeof InvestmentsRoute
+  '/loans': typeof LoansRoute
+  '/mutual-funds': typeof MutualFundsRoute
+  '/planner': typeof PlannerRoute
   '/profile': typeof ProfileRoute
+  '/stocks': typeof StocksRoute
   '/wealth': typeof WealthRoute
   '/api/chat': typeof ApiChatRoute
 }
@@ -86,27 +149,48 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/accounts'
+    | '/analytics'
     | '/fixed-deposits'
+    | '/goals'
+    | '/insurance'
     | '/investments'
+    | '/loans'
+    | '/mutual-funds'
+    | '/planner'
     | '/profile'
+    | '/stocks'
     | '/wealth'
     | '/api/chat'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/accounts'
+    | '/analytics'
     | '/fixed-deposits'
+    | '/goals'
+    | '/insurance'
     | '/investments'
+    | '/loans'
+    | '/mutual-funds'
+    | '/planner'
     | '/profile'
+    | '/stocks'
     | '/wealth'
     | '/api/chat'
   id:
     | '__root__'
     | '/'
     | '/accounts'
+    | '/analytics'
     | '/fixed-deposits'
+    | '/goals'
+    | '/insurance'
     | '/investments'
+    | '/loans'
+    | '/mutual-funds'
+    | '/planner'
     | '/profile'
+    | '/stocks'
     | '/wealth'
     | '/api/chat'
   fileRoutesById: FileRoutesById
@@ -114,9 +198,16 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AccountsRoute: typeof AccountsRoute
+  AnalyticsRoute: typeof AnalyticsRoute
   FixedDepositsRoute: typeof FixedDepositsRoute
+  GoalsRoute: typeof GoalsRoute
+  InsuranceRoute: typeof InsuranceRoute
   InvestmentsRoute: typeof InvestmentsRoute
+  LoansRoute: typeof LoansRoute
+  MutualFundsRoute: typeof MutualFundsRoute
+  PlannerRoute: typeof PlannerRoute
   ProfileRoute: typeof ProfileRoute
+  StocksRoute: typeof StocksRoute
   WealthRoute: typeof WealthRoute
   ApiChatRoute: typeof ApiChatRoute
 }
@@ -130,11 +221,39 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof WealthRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/stocks': {
+      id: '/stocks'
+      path: '/stocks'
+      fullPath: '/stocks'
+      preLoaderRoute: typeof StocksRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/profile': {
       id: '/profile'
       path: '/profile'
       fullPath: '/profile'
       preLoaderRoute: typeof ProfileRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/planner': {
+      id: '/planner'
+      path: '/planner'
+      fullPath: '/planner'
+      preLoaderRoute: typeof PlannerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mutual-funds': {
+      id: '/mutual-funds'
+      path: '/mutual-funds'
+      fullPath: '/mutual-funds'
+      preLoaderRoute: typeof MutualFundsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/loans': {
+      id: '/loans'
+      path: '/loans'
+      fullPath: '/loans'
+      preLoaderRoute: typeof LoansRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/investments': {
@@ -144,11 +263,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof InvestmentsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/insurance': {
+      id: '/insurance'
+      path: '/insurance'
+      fullPath: '/insurance'
+      preLoaderRoute: typeof InsuranceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/goals': {
+      id: '/goals'
+      path: '/goals'
+      fullPath: '/goals'
+      preLoaderRoute: typeof GoalsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/fixed-deposits': {
       id: '/fixed-deposits'
       path: '/fixed-deposits'
       fullPath: '/fixed-deposits'
       preLoaderRoute: typeof FixedDepositsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/analytics': {
+      id: '/analytics'
+      path: '/analytics'
+      fullPath: '/analytics'
+      preLoaderRoute: typeof AnalyticsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/accounts': {
@@ -178,9 +318,16 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AccountsRoute: AccountsRoute,
+  AnalyticsRoute: AnalyticsRoute,
   FixedDepositsRoute: FixedDepositsRoute,
+  GoalsRoute: GoalsRoute,
+  InsuranceRoute: InsuranceRoute,
   InvestmentsRoute: InvestmentsRoute,
+  LoansRoute: LoansRoute,
+  MutualFundsRoute: MutualFundsRoute,
+  PlannerRoute: PlannerRoute,
   ProfileRoute: ProfileRoute,
+  StocksRoute: StocksRoute,
   WealthRoute: WealthRoute,
   ApiChatRoute: ApiChatRoute,
 }
