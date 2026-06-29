@@ -212,5 +212,3 @@ export function Breadcrumbs() {
   );
 }
 
-import { useRouterState } from "@tanstack/react-router";
-import { Badge } from "@/components/ui/badge";
