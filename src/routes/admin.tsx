@@ -18,12 +18,19 @@ const USERS = Array.from({ length: 16 }, (_, i) => ({
   joined: `2024-${(i % 12) + 1}-15`,
 }));
 
+import { AdminGate } from "@/components/admin-gate";
+
 export const Route = createFileRoute("/admin")({
   head: () => ({ meta: [{ title: "Admin — YONO AI" }] }),
-  component: Admin,
+  component: () => (
+    <AdminGate>
+      <Admin />
+    </AdminGate>
+  ),
 });
 
 function Admin() {
+
   const txns = useStore(s => s.transactions);
   const [q, setQ] = useState("");
   const filtered = useMemo(() => USERS.filter(u => u.name.toLowerCase().includes(q.toLowerCase()) || u.email.includes(q)), [q]);
