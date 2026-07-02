@@ -68,6 +68,10 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  useEffect(() => {
+    // Hydrate persisted store on client only, after mount, to avoid SSR mismatches.
+    import("@/lib/store").then(({ useStore }) => useStore.getState().hydrate());
+  }, []);
   return (
     <QueryClientProvider client={queryClient}>
       <SidebarProvider>
