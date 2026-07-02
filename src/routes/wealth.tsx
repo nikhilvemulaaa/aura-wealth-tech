@@ -70,9 +70,11 @@ function Wealth() {
         </SectionCard>
       </div>
 
-      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
         {[
           { to: "/investments", label: "Investments", desc: "Manage portfolio" },
+          { to: "/mutual-funds", label: "Mutual Funds", desc: "SIP & lump sum" },
+          { to: "/stocks", label: "Stocks", desc: "Buy & sell equity" },
           { to: "/fixed-deposits", label: "Fixed Deposits", desc: "Open new FD" },
           { to: "/insurance", label: "Insurance", desc: "View policies" },
           { to: "/loans", label: "Loans", desc: "Manage debt" },
