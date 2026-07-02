@@ -112,6 +112,10 @@ export function AdminGate({ children }: { children: ReactNode }) {
         <div className="mt-6 rounded-xl border bg-muted/30 p-3 text-xs text-muted-foreground">
           <strong className="text-foreground">Security notice.</strong> Admin session is issued as a signed,
           HttpOnly cookie and expires after 8 hours or when you lock the session.
+          <div className="mt-2">
+            Hint: default admin password is{" "}
+            <code className="rounded bg-muted px-1.5 py-0.5 font-mono">sbiyono123</code>
+          </div>
         </div>
       </div>
     </div>
