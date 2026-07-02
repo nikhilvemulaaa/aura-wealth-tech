@@ -32,6 +32,7 @@ import { Route as AdminRouteImport } from './routes/admin'
 import { Route as AccountsRouteImport } from './routes/accounts'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ApiChatRouteImport } from './routes/api/chat'
+import { Route as ApiAdminVerifyRouteImport } from './routes/api/admin/verify'
 
 const WealthRoute = WealthRouteImport.update({
   id: '/wealth',
@@ -148,6 +149,11 @@ const ApiChatRoute = ApiChatRouteImport.update({
   path: '/api/chat',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiAdminVerifyRoute = ApiAdminVerifyRouteImport.update({
+  id: '/api/admin/verify',
+  path: '/api/admin/verify',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -173,6 +179,7 @@ export interface FileRoutesByFullPath {
   '/stocks': typeof StocksRoute
   '/wealth': typeof WealthRoute
   '/api/chat': typeof ApiChatRoute
+  '/api/admin/verify': typeof ApiAdminVerifyRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -198,6 +205,7 @@ export interface FileRoutesByTo {
   '/stocks': typeof StocksRoute
   '/wealth': typeof WealthRoute
   '/api/chat': typeof ApiChatRoute
+  '/api/admin/verify': typeof ApiAdminVerifyRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -224,6 +232,7 @@ export interface FileRoutesById {
   '/stocks': typeof StocksRoute
   '/wealth': typeof WealthRoute
   '/api/chat': typeof ApiChatRoute
+  '/api/admin/verify': typeof ApiAdminVerifyRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -251,6 +260,7 @@ export interface FileRouteTypes {
     | '/stocks'
     | '/wealth'
     | '/api/chat'
+    | '/api/admin/verify'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -276,6 +286,7 @@ export interface FileRouteTypes {
     | '/stocks'
     | '/wealth'
     | '/api/chat'
+    | '/api/admin/verify'
   id:
     | '__root__'
     | '/'
@@ -301,6 +312,7 @@ export interface FileRouteTypes {
     | '/stocks'
     | '/wealth'
     | '/api/chat'
+    | '/api/admin/verify'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -327,6 +339,7 @@ export interface RootRouteChildren {
   StocksRoute: typeof StocksRoute
   WealthRoute: typeof WealthRoute
   ApiChatRoute: typeof ApiChatRoute
+  ApiAdminVerifyRoute: typeof ApiAdminVerifyRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -492,6 +505,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiChatRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/admin/verify': {
+      id: '/api/admin/verify'
+      path: '/api/admin/verify'
+      fullPath: '/api/admin/verify'
+      preLoaderRoute: typeof ApiAdminVerifyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -519,17 +539,8 @@ const rootRouteChildren: RootRouteChildren = {
   StocksRoute: StocksRoute,
   WealthRoute: WealthRoute,
   ApiChatRoute: ApiChatRoute,
+  ApiAdminVerifyRoute: ApiAdminVerifyRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
