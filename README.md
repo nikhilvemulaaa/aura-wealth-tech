@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://upload.wikimedia.org/wikipedia/en/thumb/5/58/State_Bank_of_India_logo.svg/512px-State_Bank_of_India_logo.svg.png" width="130"/>
+
 
 # 💙 YONO AI
 ### Intelligent Banking • Wealth Advisory • AI-Powered Finance Ecosystem
