@@ -32,6 +32,8 @@ type Actions = {
   updateProfile: (p: Partial<typeof PROFILE>) => void;
   toggleTheme: () => void;
   resetData: () => void;
+  hydrate: () => void;
+  _hydrated: boolean;
 };
 
 const initial: State = {
@@ -49,17 +51,11 @@ const initial: State = {
 
 const STORAGE_KEY = "yono-state-v1";
 
-function load(): State {
-  if (typeof window === "undefined") return initial;
-  try {
-    const raw = localStorage.getItem(STORAGE_KEY);
-    if (!raw) return initial;
-    return { ...initial, ...JSON.parse(raw) };
-  } catch { return initial; }
-}
+let persistSubscribed = false;
 
 export const useStore = create<State & Actions>((set, get) => ({
-  ...load(),
+  ...initial,
+  _hydrated: false,
   transfer: (from, to, amount, note) => set((s) => {
     const accounts = s.accounts.map(a => {
       if (a.id === from) return { ...a, balance: a.balance - amount };
@@ -97,16 +93,34 @@ export const useStore = create<State & Actions>((set, get) => ({
   }),
   resetData: () => {
     if (typeof window !== "undefined") localStorage.removeItem(STORAGE_KEY);
-    set(() => initial);
+    set(() => ({ ...initial, _hydrated: true }));
+  },
+  hydrate: () => {
+    if (typeof window === "undefined" || get()._hydrated) return;
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if (raw) {
+        const parsed = JSON.parse(raw);
+        set((s) => ({ ...s, ...parsed, _hydrated: true }));
+      } else {
+        set({ _hydrated: true });
+      }
+    } catch {
+      set({ _hydrated: true });
+    }
+    if (get().theme === "dark") document.documentElement.classList.add("dark");
+    if (!persistSubscribed) {
+      persistSubscribed = true;
+      useStore.subscribe((s) => {
+        if (!s._hydrated) return;
+        const { profile, accounts, transactions, investments, fds, goals, loans, insurance, notifications, theme } = s;
+        try {
+          localStorage.setItem(
+            STORAGE_KEY,
+            JSON.stringify({ profile, accounts, transactions, investments, fds, goals, loans, insurance, notifications, theme }),
+          );
+        } catch {}
+      });
+    }
   },
 }));
-
-// persistence
-if (typeof window !== "undefined") {
-  useStore.subscribe((s) => {
-    const { profile, accounts, transactions, investments, fds, goals, loans, insurance, notifications, theme } = s;
-    localStorage.setItem(STORAGE_KEY, JSON.stringify({ profile, accounts, transactions, investments, fds, goals, loans, insurance, notifications, theme }));
-  });
-  // apply theme on load
-  if (load().theme === "dark") document.documentElement.classList.add("dark");
-}
