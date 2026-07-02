@@ -29,19 +29,22 @@ function Advisor() {
   const goals = useStore(s => s.goals);
   const loans = useStore(s => s.loans);
 
-  const context = useMemo(() => {
-    const cash = accounts.reduce((a, b) => a + b.balance, 0);
-    const inv = investments.reduce((a, b) => a + b.current, 0);
-    return [
-      `Name: ${profile.name}; Risk profile: ${profile.riskProfile}`,
-      `Cash: ${inr(cash)}; Investments: ${inr(inv)}`,
-      `Top goals: ${goals.slice(0, 3).map(g => `${g.title} (${inr(g.saved)}/${inr(g.target)})`).join(", ")}`,
-      `Loans outstanding: ${inr(loans.reduce((a, b) => a + b.outstanding, 0))}`,
-    ].join("\n");
+  const snapshot = useMemo(() => {
+    const allowedRisk = ["Conservative", "Balanced", "Aggressive"] as const;
+    const risk = (allowedRisk as readonly string[]).includes(profile.riskProfile)
+      ? (profile.riskProfile as (typeof allowedRisk)[number])
+      : undefined;
+    return {
+      riskProfile: risk,
+      cash: accounts.reduce((a, b) => a + b.balance, 0),
+      investments: investments.reduce((a, b) => a + b.current, 0),
+      goalsCount: goals.length,
+      loansOutstanding: loans.reduce((a, b) => a + b.outstanding, 0),
+    };
   }, [profile, accounts, investments, goals, loans]);
 
   const { messages, sendMessage, status, setMessages } = useChat({
-    transport: new DefaultChatTransport({ api: "/api/chat", body: { context } }),
+    transport: new DefaultChatTransport({ api: "/api/chat", body: { snapshot } }),
   });
   const inputRef = useRef<HTMLInputElement>(null);
   const bottomRef = useRef<HTMLDivElement>(null);
