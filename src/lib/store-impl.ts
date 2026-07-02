@@ -1,5 +1,5 @@
 // Minimal zustand-like store with useSyncExternalStore
-import { useSyncExternalStore } from "react";
+import { useRef, useSyncExternalStore } from "react";
 
 type Listener = () => void;
 type SetFn<T> = (partial: Partial<T> | ((s: T) => Partial<T>)) => void;
@@ -13,6 +13,20 @@ export type StoreApi<T> = {
   setState: SetFn<T>;
   subscribe: (l: (s: T) => void) => () => void;
 };
+
+function shallowEqual(a: unknown, b: unknown): boolean {
+  if (Object.is(a, b)) return true;
+  if (typeof a !== "object" || a === null || typeof b !== "object" || b === null) return false;
+  if (Array.isArray(a) && Array.isArray(b)) {
+    if (a.length !== b.length) return false;
+    for (let i = 0; i < a.length; i++) if (!Object.is(a[i], b[i])) return false;
+    return true;
+  }
+  const ka = Object.keys(a as object); const kb = Object.keys(b as object);
+  if (ka.length !== kb.length) return false;
+  for (const k of ka) if (!Object.is((a as Record<string, unknown>)[k], (b as Record<string, unknown>)[k])) return false;
+  return true;
+}
 
 export function create<T extends object>(init: Initializer<T>): StoreApi<T> {
   let state: T;
@@ -28,8 +42,19 @@ export function create<T extends object>(init: Initializer<T>): StoreApi<T> {
   function useStore(): T;
   function useStore<U>(selector: (s: T) => U): U;
   function useStore<U>(selector?: (s: T) => U): T | U {
+    const cacheRef = useRef<{ state: T; value: T | U } | null>(null);
     const subscribe = (l: Listener) => { listeners.add(l); return () => { listeners.delete(l); }; };
-    const getSnapshot = () => (selector ? selector(state) : state);
+    const getSnapshot = () => {
+      const cache = cacheRef.current;
+      if (cache && cache.state === state) return cache.value;
+      const value = selector ? selector(state) : state;
+      if (cache && shallowEqual(cache.value, value)) {
+        cacheRef.current = { state, value: cache.value };
+        return cache.value;
+      }
+      cacheRef.current = { state, value };
+      return value;
+    };
     return useSyncExternalStore(subscribe, getSnapshot, getSnapshot) as T | U;
   }
 
