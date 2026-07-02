@@ -271,12 +271,12 @@ Add project screenshots here:
 # 👨‍💻 Author
 
 ## Nikhil Vemula
-AI & Data Analytics Enthusiast  
+AIML & Data Analytics Enthusiast  
 Passionate about building AI-powered solutions in FinTech, Analytics, and Intelligent Systems.
 
 ### Connect With Me
 - GitHub: https://github.com/nikhilvemulaaa
-- LinkedIn: Add your LinkedIn profile here
+- LinkedIn: https://www.linkedin.com/in/vemula-nikhil-7322b5362/
 
 ---
 
