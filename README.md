@@ -1,21 +1,20 @@
-````markdown
 <div align="center">
 
-<img src="https://upload.wikimedia.org/wikipedia/en/thumb/5/58/State_Bank_of_India_logo.svg/512px-State_Bank_of_India_logo.svg.png" width="120"/>
+<img src="https://upload.wikimedia.org/wikipedia/en/thumb/5/58/State_Bank_of_India_logo.svg/512px-State_Bank_of_India_logo.svg.png" width="130"/>
 
 # 💙 YONO AI
-### AI-Powered Smart Banking & Personal Finance Ecosystem
+### Intelligent Banking • Wealth Advisory • AI-Powered Finance Ecosystem
 
 <p align="center">
-<img src="https://readme-typing-svg.herokuapp.com?font=Orbitron&size=28&duration=3000&color=00AEEF&center=true&vCenter=true&width=900&lines=Smarter+Banking;AI+Driven+Finance;Future+of+Digital+Banking"/>
+<img src="https://readme-typing-svg.herokuapp.com?font=Orbitron&size=26&duration=3000&color=00AEEF&center=true&vCenter=true&width=900&lines=AI+Powered+Smart+Banking;Personalized+Wealth+Advisory;Future+of+Digital+Finance"/>
 </p>
 
-![Python](https://img.shields.io/badge/Python-Advanced-blue?style=for-the-badge)
+![React](https://img.shields.io/badge/Frontend-React-blue?style=for-the-badge)
+![TypeScript](https://img.shields.io/badge/Language-TypeScript-3178C6?style=for-the-badge)
 ![AI](https://img.shields.io/badge/AI-Integrated-00BFFF?style=for-the-badge)
-![FinTech](https://img.shields.io/badge/Domain-FinTech-1E90FF?style=for-the-badge)
-![Status](https://img.shields.io/badge/Status-Active-success?style=for-the-badge)
+![FinTech](https://img.shields.io/badge/Domain-FinTech-success?style=for-the-badge)
 
-### 🚀 Transforming Traditional Banking into Intelligent Financial Advisory
+### 🚀 Reimagining Digital Banking with Artificial Intelligence
 
 </div>
 
@@ -23,350 +22,268 @@
 
 # 📌 Overview
 
-**YONO AI** is a next-generation **AI-powered digital banking platform** designed to revolutionize the banking experience by integrating **Artificial Intelligence, Data Analytics, Predictive Intelligence, and Automation**.
+**YONO AI** is a next-generation **AI-powered banking and personal finance platform** designed to transform traditional digital banking into an intelligent financial ecosystem.
 
-Unlike traditional banking apps that only provide transaction services, YONO AI acts as a **personal financial advisor**, helping users make smarter financial decisions through real-time insights, predictive analytics, and intelligent recommendations.
+Unlike conventional banking applications that mainly support transactions, YONO AI acts as a **smart financial companion** that helps users:
 
-The platform enables users to:
+- Track spending behavior
+- Manage wealth intelligently
+- Plan investments
+- Monitor savings goals
+- Detect risks and fraud
+- Receive personalized AI recommendations
 
-✅ Track expenses intelligently  
-✅ Analyze financial behavior  
-✅ Monitor investments  
-✅ Improve savings habits  
-✅ Detect fraud and financial risks  
-✅ Receive AI-driven recommendations  
+This platform bridges the gap between **banking, analytics, automation, and intelligent financial advisory**.
 
 ---
 
 # ❗ Problem Statement
 
-Traditional banking applications focus mainly on:
+Traditional banking apps focus heavily on operations like:
 
-- Account balance checking  
+- Balance inquiry  
 - Money transfers  
 - Bill payments  
-- Loan management  
-- Basic statements  
+- Loan services  
+- Account statements  
 
-However, modern users face major challenges:
+However, users still struggle with:
 
-❌ No clear visibility into spending habits  
-❌ Poor savings discipline  
-❌ Difficulty planning investments  
-❌ Lack of personalized guidance  
-❌ Limited financial awareness  
+❌ Poor financial awareness  
+❌ Lack of spending insights  
+❌ No personalized investment guidance  
+❌ Weak savings discipline  
+❌ Limited AI-driven decision support  
 
-As digital transactions increase, users need **smart banking systems** that do more than just process payments.
+There is a strong need for a smarter system that combines **banking + AI + analytics**.
 
 ---
 
 # 💡 Proposed Solution
 
-YONO AI bridges the gap between **banking services and financial intelligence**.
+YONO AI solves these challenges by introducing an **intelligent finance ecosystem** that delivers:
 
-The platform leverages AI and analytics to:
+✅ AI financial advisor  
+✅ Real-time analytics dashboards  
+✅ Smart wealth management  
+✅ Goal-based savings planning  
+✅ Investment tracking  
+✅ Personalized financial recommendations  
 
-- Analyze transaction history  
-- Predict spending behavior  
-- Categorize expenses automatically  
-- Detect unusual financial activity  
-- Recommend savings strategies  
-- Provide goal-based financial planning  
-
-This transforms digital banking into a proactive and personalized experience.
+The platform converts raw financial activity into actionable insights.
 
 ---
 
 # ✨ Key Features
 
-| Feature | Description |
-|---------|-------------|
-| 🤖 AI Financial Assistant | Natural language banking support and personalized guidance |
-| 📊 Smart Analytics | Real-time spending and savings insights |
-| 💰 Expense Tracking | Automatic expense categorization |
-| 📈 Investment Monitoring | Portfolio and wealth management |
-| 🎯 Goal Planning | AI-powered financial goal forecasting |
-| 🚨 Fraud Detection | Detects suspicious transactions |
-| 🔔 Smart Alerts | Personalized reminders and notifications |
-| 🔐 Secure Banking | Enterprise-grade security |
+## 🧠 AI Financial Advisor
+- AI-powered chatbot for personalized finance guidance
+- Natural language interaction
+- Smart investment suggestions
 
 ---
 
-# 🎯 Core Objectives
-
-- Improve customer financial awareness  
-- Increase savings and investment discipline  
-- Reduce unnecessary spending  
-- Enhance digital banking engagement  
-- Deliver AI-powered financial intelligence  
+## 📊 Financial Analytics Dashboard
+- Spending analysis
+- Income vs expenses insights
+- Cash flow visualization
+- Wealth growth tracking
 
 ---
 
-# 🏗 System Architecture
+## 💰 Wealth Management
+- Portfolio monitoring
+- Asset distribution tracking
+- Long-term wealth planning
 
-```text
-                     ┌──────────────────────┐
-                     │      User Layer      │
-                     │ Mobile / Web / AI Bot│
-                     └──────────┬───────────┘
-                                │
-                                ▼
-                    ┌───────────────────────┐
-                    │ Authentication Layer  │
-                    │ OTP / MFA / Biometrics│
-                    └──────────┬────────────┘
-                               │
-                               ▼
-                     ┌─────────────────────┐
-                     │     API Gateway     │
-                     └───────┬───────┬─────┘
-                             │       │
-               ┌─────────────┘       └─────────────┐
-               ▼                                   ▼
-     ┌─────────────────┐               ┌─────────────────┐
-     │ Banking Service │               │    AI Engine    │
-     └────────┬────────┘               └────────┬────────┘
-              │                                 │
-              └──────────────┬──────────────────┘
-                             ▼
-                  ┌─────────────────────┐
-                  │ Data Processing Hub │
-                  └──────────┬──────────┘
-                             ▼
-                  ┌─────────────────────┐
-                  │ Analytics Dashboard │
-                  └──────────┬──────────┘
-                             ▼
-                  ┌─────────────────────┐
-                  │ Recommendation Hub  │
-                  └─────────────────────┘
+---
+
+## 📈 Investment Monitoring
+Track multiple investment products:
+
+- Stocks
+- Mutual Funds
+- Fixed Deposits
+- Insurance Plans
+
+---
+
+## 🎯 Goal-Based Planning
+Users can define goals such as:
+
+- Emergency Fund
+- Education Savings
+- Home Purchase
+- Retirement Planning
+
+AI helps optimize savings strategy.
+
+---
+
+## 🔒 Risk & Fraud Detection
+- Suspicious transaction alerts
+- Financial anomaly detection
+- Security-focused monitoring
+
+---
+
+## 📄 Smart Document Management
+- Statements
+- Financial reports
+- Banking documents
+- Transaction history
+
+---
+
+# 🏗 Architecture / Process Flow
+
+```mermaid
+flowchart TD
+    A[User Login] --> B[Banking Dashboard]
+    B --> C[Transaction Data]
+    C --> D[AI Processing Engine]
+    D --> E[Analytics Engine]
+    D --> F[Recommendation Engine]
+    E --> G[Financial Insights]
+    F --> H[Personalized Suggestions]
+    G --> I[User Decision Making]
+    H --> I
 ```
 
 ---
 
-# 🔄 Process Flow
-
-## Step 1 — User Login
-Users securely log in using:
-- Credentials  
-- OTP  
-- Biometrics  
-
----
-
-## Step 2 — Banking Transactions
-Users perform:
-- Payments  
-- Transfers  
-- Balance checks  
-- Investments  
-
----
-
-## Step 3 — Data Collection
-System collects:
-- Transaction data  
-- Account activity  
-- Spending behavior  
-
----
-
-## Step 4 — Data Processing
-Raw data is cleaned and transformed using analytics pipelines.
-
----
-
-## Step 5 — AI Analysis
-AI models identify:
-- Spending patterns  
-- Risk behavior  
-- Financial opportunities  
-
----
-
-## Step 6 — Recommendation Engine
-System generates:
-- Savings suggestions  
-- Alerts  
-- Investment advice  
-
----
-
-## Step 7 — Dashboard Visualization
-Interactive dashboards display KPIs and insights.
-
----
-
-# ⚙ Technology Stack
+# 🛠 Technology Stack
 
 ## Frontend
-- React.js  
-- Next.js  
-- Tailwind CSS  
-- Flutter  
+- React
+- TypeScript
+- Vite
+- TanStack Router
+- Tailwind CSS
+- Radix UI / ShadCN
 
-## Backend
-- Python  
-- FastAPI  
-- Django  
-- REST APIs  
+## AI / Intelligence
+- OpenAI Compatible AI SDK
+- Recommendation Engine
+- Financial Analytics Models
 
-## Database
-- MySQL  
-- PostgreSQL  
-- MongoDB  
-- Redis  
+## Data & Analytics
+- Real-time financial datasets
+- Predictive analysis
+- KPI dashboards
 
-## AI / Machine Learning
-- Python  
-- Pandas  
-- NumPy  
-- Scikit-learn  
-- TensorFlow  
-- PyTorch  
-- NLP / LLM Models  
-
-## Analytics
-- Power BI  
-- Tableau  
-- Matplotlib  
-- Apache Spark  
-
-## Cloud & DevOps
-- Amazon Web Services  
-- Docker  
-- Kubernetes  
-- GitHub Actions  
+## Deployment
+- Modern cloud-ready architecture
+- Scalable API integrations
 
 ---
 
-# 📊 Key Performance Indicators (KPIs)
-
-| KPI | Value |
-|-----|-------|
-| Financial Awareness Improvement | 40% |
-| Savings Increase | 30% |
-| Fraud Detection Accuracy | 95% |
-| AI Recommendation Accuracy | 92% |
-| Customer Engagement Improvement | 50% |
-
----
-
-# 💼 Business Model
-
-## 1. Subscription Model (B2C)
-Premium AI planning and analytics.
-
-## 2. Banking Partnerships (B2B)
-Enterprise AI integration for banks.
-
-## 3. Commission Revenue
-Income via:
-- Mutual funds  
-- Insurance  
-- Loans  
-- Credit cards  
-
-## 4. Analytics Services
-Data insights for institutions.
-
----
-
-# 📈 Commercial Potential
-
-YONO AI has massive growth potential in the rapidly expanding fintech ecosystem.
-
-Target users:
-- Retail customers  
-- Young professionals  
-- SMEs  
-- Banks  
-- Insurance firms  
-
-### Market Opportunities
-✅ Growing digital banking adoption  
-✅ Rising AI demand in finance  
-✅ Strong fintech investments  
-✅ Increasing smartphone penetration  
-
----
-
-# 🔐 Security & Compliance
-
-Security is the backbone of YONO AI.
-
-Implemented security:
-- End-to-End Encryption  
-- OAuth 2.0  
-- JWT Authentication  
-- Role-Based Access Control  
-- Fraud Monitoring  
-
-Compliance:
-- PCI DSS  
-- Banking Security Standards  
-- Privacy Regulations  
-
----
-
-# 🚀 Future Enhancements
-
-- Voice Banking Assistant  
-- Blockchain Security  
-- Credit Score Prediction  
-- GenAI Wealth Advisor  
-- Multilingual AI Banking  
-- Advanced Risk Analytics  
-
----
-
-# 📂 Project Structure
+# 📂 Core Modules
 
 ```bash
-YONO-AI/
+src/routes/
 │
-├── frontend/
-├── backend/
-├── ai-models/
-├── analytics/
-├── database/
-├── documentation/
-└── README.md
+├── analytics.tsx
+├── advisor.tsx
+├── wealth.tsx
+├── investments.tsx
+├── stocks.tsx
+├── mutual-funds.tsx
+├── fixed-deposits.tsx
+├── insurance.tsx
+├── planner.tsx
+├── goals.tsx
+├── documents.tsx
+└── chat.tsx
 ```
 
 ---
 
-# 🌟 Project Impact
+# 📈 Business Model / Commercial Potential
 
-YONO AI helps build the future of intelligent banking by enabling:
+YONO AI creates value for banks and customers through:
 
-✔ Smarter spending decisions  
-✔ Better savings discipline  
-✔ Improved financial literacy  
-✔ Personalized wealth management  
-✔ AI-driven banking experience  
+### Revenue Opportunities
+- Premium AI advisory subscriptions
+- Wealth management services
+- Investment recommendations
+- Partner financial products
+- Banking API integrations
+
+### Market Potential
+The global digital banking and AI-finance sector is rapidly expanding due to:
+
+- Increasing fintech adoption
+- Rising digital payments
+- AI-driven personalization demand
+- Data-driven wealth management
+
+YONO AI positions itself strongly in the future of intelligent banking.
+
+---
+
+# 🎯 Future Scope
+
+- Voice-enabled banking assistant  
+- Generative AI financial planning  
+- Credit risk prediction  
+- Hyper-personalized recommendations  
+- Advanced fraud detection models  
+- Smart loan eligibility scoring  
+
+---
+
+# 🚀 Installation
+
+```bash
+git clone https://github.com/nikhilvemulaaa/aura-wealth-tech.git
+```
+
+```bash
+cd aura-wealth-tech
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run locally:
+
+```bash
+npm run dev
+```
+
+---
+
+# 📸 Screenshots
+
+Add project screenshots here:
+
+- Dashboard UI
+- AI Advisor
+- Wealth Analytics
+- Investment Planner
 
 ---
 
 # 👨‍💻 Author
 
 ## Nikhil Vemula
-B.Tech CSE (AI & ML) Graduate  
-Aspiring Data Analyst | AI Enthusiast | Problem Solver  
-
-Passionate about building impactful AI solutions that solve real-world business problems.
+AI & Data Analytics Enthusiast  
+Passionate about building AI-powered solutions in FinTech, Analytics, and Intelligent Systems.
 
 ### Connect With Me
-- GitHub: YOUR_GITHUB_USERNAME
-- LinkedIn: YOUR_LINKEDIN_PROFILE
+- GitHub: https://github.com/nikhilvemulaaa
+- LinkedIn: Add your LinkedIn profile here
 
 ---
 
 <div align="center">
 
-# ⭐ Star this Repository if you found it valuable!
+## ⭐ If you like this project, consider starring the repository!
 
-## 💙 Building the Future of Banking with AI
+### Building the Future of Smart Banking with AI 💙
 
 </div>
-````
